@@ -25,8 +25,8 @@ const ListProductElectronic = () => {
                 .filter((product) => product.product_category === 'Electronic')
                 .slice(0, 8)
                 .map((product, index) => (
-                <Link to={`/detail-product/${product.product_id}`} className='w-[98%]'>
-                    <div key={index} className='relative overlow-hidden w-[25%] h-[50%] cursor-pointer hover:brightness-[96%] flex-col border p-3 border-slate-300 bg-white overflow-hidden flex'>
+                <Link to={`/detail-product/${product.product_id}`} className='relative overlow-hidden w-[25%] h-[50%] cursor-pointer hover:brightness-[96%] flex-col border p-3 border-slate-300 bg-white overflow-hidden flex'>
+                    <div key={index}>
                         <p className='text-[16px] mb-1 font-bold text-black'>{product?.product_name}</p>
                         <small className='text-[14px] font-normal text-slate-500'>{toRupiah(product?.product_price ? product?.product_price : 0)}</small>
                         <hr className='my-3 w-[40%]' />
