@@ -1,7 +1,6 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import { BGHero1 } from '../../assets'
 import { Button } from '../../component'
-import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (

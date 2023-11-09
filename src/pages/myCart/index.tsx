@@ -1,6 +1,5 @@
 import { FaArrowLeft, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Product1 } from '../../assets';
 import { Button } from '../../component';
 import ToRupiah from '../../helpers/toRupiah';
 import { Footer, Navbar } from '../../layout';

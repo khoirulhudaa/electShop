@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react'
-import { FaArrowLeft, FaPen, FaSignOutAlt } from 'react-icons/fa'
+import { FaArrowLeft, FaSignOutAlt } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { BgProfile, Default } from '../../assets'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { BgProfile } from '../../assets'
 import { Button } from '../../component'
 import InputField from '../../component/inputField'
 import { Footer, Navbar } from '../../layout'
 import { authSignIn } from '../../redux/reducers/authSlice'
 import API from '../../service/api'
 import { useUpdateProfile } from '../../utils/validations/validationUpdateProfile'
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
 
 const ProfileUser = () => {
 
   const navigate = useNavigate()
     
-  const [editActive, setEditActive] = useState<boolean>(false)
   const [errorStatus, setErrorStatus] = useState<string>("")
   const [updateStatus, setUpdateStatus] = useState<boolean>(false)
   const [update, setUpdate] = useState<boolean>(false)
@@ -65,6 +64,7 @@ const ProfileUser = () => {
 
   const handleErrorMessage = (error: string) => {
     setErrorStatus(error)
+    console.log(errorStatus)
   }
 
    const listGender = [

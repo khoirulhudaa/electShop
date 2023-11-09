@@ -71,11 +71,6 @@ const ListProduct = () => {
   // Menghitung jumlah halaman berdasarkan jumlah data
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
-  // Mengambil data yang sesuai dengan halaman saat ini
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-
   // Fungsi untuk berpindah ke halaman lain
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -155,7 +150,7 @@ const ListProduct = () => {
                 <FaChevronRight size={14} style={{transition: "0.4s ease",transform: `rotate(${showMenu ? "90deg" : "0deg"})`}} />
               </div>
               <div onClick={() => setDisplay('bloack')} className='w-[35px] mx-2 rounded-lg border-2 border-slate-500 h-[35px] flex items-center justify-center cursor-pointer hover:brightness-[80%] duration-200'>
-                <img src={Grid} a lt="gridMode" className='w-[60%] opacity-[0.7]' />
+                <img src={Grid} alt="gridMode" className='w-[60%] opacity-[0.7]' />
               </div>
               <div onClick={() => setDisplay('grid')} className='w-[35px] rounded-lg border-2 border-slate-500 h-[35px] flex items-center justify-center cursor-pointer hover:brightness-[80%] duration-200'>
                 <img src={Block} alt="blockMode" className='w-[50%] opacity-[0.7]' />

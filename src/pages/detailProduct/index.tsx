@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react';
 import { FaCheckCircle, FaChevronRight, FaStar, FaStore } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { RotateSpinner } from 'react-spinners-kit';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { Flag, Product2, Product3 } from '../../assets';
 import { Button } from '../../component';
 import Alert from '../../component/alert';
+import ListInDetailProduct from '../../component/listProduct/listInDetailProduct';
 import ToRupiah from '../../helpers/toRupiah';
 import { Footer, Navbar } from '../../layout';
-import API from '../../service/api';
-import { RotateSpinner } from 'react-spinners-kit';
-import ListInDetailProduct from '../../component/listProduct/listInDetailProduct';
-import { useDispatch } from 'react-redux';
 import { addCart } from '../../redux/reducers/cartSlice';
 import store from '../../redux/store';
+import API from '../../service/api';
 
 const DetailProduct = () => {
 
-const [rating, setRating] = useState<number>(4)
 const [product, setProduct] = useState<Record<string, any>>({})
 const [isLoading, setIsLoading] = useState(true);
 
@@ -54,7 +52,7 @@ const RenderStars = () => {
     const stars = [];
 
     for (let i = 0; i < 5; i++) {
-        const starColor = i <= rating ? 'rgb(245, 228, 0)' : 'gray';
+        const starColor = i <= 5 ? 'rgb(245, 228, 0)' : 'gray';
 
         stars.push(
             <FaStar

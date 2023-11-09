@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import store from '../../redux/store';
 import API from '../../service/api';
 import { requestInterface } from '../interfaces/requestInterface';
 

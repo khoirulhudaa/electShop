@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CommentInterface } from "../../../utils/interfaces/commentInterface/commentInterface";
+import { CommentInterface } from "../../../utils/interfaces/commentInterface";
 
 interface interfaceComment {
     dataComment: CommentInterface | null

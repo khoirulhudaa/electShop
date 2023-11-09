@@ -80,7 +80,7 @@ const Navbar: React.FC<navbarProps> = ({type = 'default'}) => {
                         <Link to='/my-cart'>
                             <div className='relative flex flex-col items-center justify-center w-[40px] mt-2 rounded-full cursor-pointer hover:brightness-[90%] active:scale-[0.98] ml-[30px]'>
                                 <div className='absolute top-[-10px] right-[-8px] text-white rounded-full flex items-center justify-center bg-blue-500 font-bold text-[12px] w-[22px] h-[22px] p-1'>
-                                    12  
+                                    {cart && cart?.length}  
                                 </div>
                                 <FaCartPlus size={18} />
                                 <small className='text-slate-400 mt-2 w-max'>My Cart</small>                            

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaPen, FaPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { BgProfile, LogoProfile, Product1 } from '../../assets';
-import { Button } from '../../component';
-import { Footer, Navbar } from '../../layout';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import { BgProfile, LogoProfile, Product1 } from '../../assets';
+import { Footer, Navbar } from '../../layout';
 
 const itemsPerPage = 1; // Jumlah item yang ditampilkan per halaman
 const maxPagesToShow = 3; // Jumlah angka halaman yang ditampilkan di pagination
@@ -67,9 +66,6 @@ const ProfileShop = () => {
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   // Mengambil data yang sesuai dengan halaman saat ini
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   // Fungsi untuk berpindah ke halaman lain
   const handlePageChange = (pageNumber: number) => {

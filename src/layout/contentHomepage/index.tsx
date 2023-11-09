@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
-import { FaCartPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { BgHomeOutdoor, BgTech, Product1 } from '../../assets';
+import { BgHomeOutdoor, BgTech } from '../../assets';
 import { Button, Question } from '../../component';
-import toRupiah from '../../helpers/toRupiah';
+import Alert from '../../component/alert';
+import { ListProductAllBrand, ListProductCatalog, ListProductElectronic, ListRecommended } from '../../component/listProduct';
 import API from '../../service/api';
 import { productInterface } from '../../utils/interfaces/productInterface';
 import { useFormikSubscribe } from '../../utils/validations/subscribeValidation';
-import Alert from '../../component/alert';
-import { ListProductAllBrand, ListProductCatalog, ListProductElectronic, ListRecommended } from '../../component/listProduct';
 
 const ContentHomepage = () => {
 
@@ -49,6 +47,8 @@ const ContentHomepage = () => {
             })
         ) 
     }
+
+    console.log(products)
 
     const useFormikSubs = useFormikSubscribe({ onError: handleError, onResponse: handleResponse })
 

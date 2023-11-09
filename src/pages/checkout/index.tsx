@@ -1,9 +1,9 @@
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { BNI, BRI, Dana, Mandiri, Product1, Product3 } from '../../assets';
+import { BNI, BRI, Dana, Mandiri } from '../../assets';
 import { Button } from '../../component';
-import { Footer, Navbar } from '../../layout';
 import ToRupiah from '../../helpers/toRupiah';
+import { Footer, Navbar } from '../../layout';
 
 const MyCart = () => {
 
