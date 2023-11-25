@@ -18,9 +18,14 @@ const API = {
         return api.get(`/account/list/consumer/${consumer_id}`)
     },
 
+    // Shop
+    getShopById: (id?: string) => {
+        return api.get(`/shop/oneShop/${id}`)
+    },
+
     // Product
-    getAllProduct: () => {
-        return api.get('/product')
+    getAllProduct: (data?: object) => {
+        return api.get('/product', {params: data})
     },
     getProductById: (product_id: string) => {
         return api.get(`/product/Oneproduct/${product_id}`)
@@ -30,8 +35,11 @@ const API = {
     },
 
     // History
-    getAllHistoryBuy: () => {
-        return api.get('/historyBuy')
+    getAllHistoryBuy: (id?: string) => {
+        return api.get(`/history/${id}`)
+    },
+    removeHistoryConsumer: (history_id: string, idCart: string) => {
+        return api.delete(`/history/consumer/${history_id}/product/${idCart}`)
     },
 
     // Request
@@ -42,7 +50,19 @@ const API = {
     // Subsribe
     newSubscribe: (body: any) => {
         return api.post('/subscribe', body)
-    }
+    },
+
+    // Payment
+    getPaymentByShop: (shop_id: string) => {
+        return api.get(`/payment/${shop_id}`)
+    },
+    checkout: (body: any) => {
+        return api.post('/payment/create', body)
+    },
+    updateStatusPayment: (history_id: string, status: string) => {
+        return api.put(`/history/updateStatus/${history_id}/${status}`)
+    },
+
 }
 
 export default API;

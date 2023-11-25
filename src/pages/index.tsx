@@ -9,7 +9,6 @@ import ProfileUser from "./profileUser";
 import ShoppingHistory from "./shoppingHistory";
 import ProfileShop from "./profileShop";
 import SuccessPayment from "./successPayment";
-import PendingPayment from "./pendingPayment";
 import NotFound from "./notFound";
 
 export {
@@ -24,6 +23,5 @@ export {
     ShoppingHistory,
     ProfileShop,
     SuccessPayment,
-    PendingPayment,
     NotFound
 }

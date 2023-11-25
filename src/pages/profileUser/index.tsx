@@ -79,32 +79,32 @@ const ProfileUser = () => {
     <>
       <Navbar /> 
 
-        <section className='w-screen h-max flex px-[50px] mt-[60px] rounded-lg overflow-hidden'>
-            <div className='relative rounded-lg w-[40%] overflow-hidden bg-slate-100 h-[500px] mb-7'>
-            <Link to='/'>
-                <div className='absolute left-[30px] top-7 z-[4] rounded-full flex bg-white items-center justify-center cursor-pointer active:scale-[0.99] shadow-md w-[40px] h-[40px] hover:brightness-[90%]'>
-                    <FaArrowLeft size={14} />
-                </div>
-            </Link>
+        <section className='w-screen h-max md:flex px-[20px] md:px-[50px] mt-[30px] md:mt-[60px] rounded-lg overflow-hidden'>
+            <div className='relative rounded-lg w-full md:w-[40%] overflow-hidden bg-slate-100 h-max md:h-[500px] mb-7'>
+                <Link to='/'>
+                    <div className='absolute left-[20px] top-5 z-[4] rounded-full flex bg-white items-center justify-center cursor-pointer active:scale-[0.99] shadow-md w-[40px] h-[40px] hover:brightness-[90%]'>
+                        <FaArrowLeft size={14} />
+                    </div>
+                </Link>
                 <img src={BgProfile} alt="bgProfile" className='hover:scale-[110%] ease brightness-[70%] duration-300 w-full mx-auto relative h-full object-cover' />
                 <div className='absolute left-[50%] top-[50%] bg-white flex items-center justify-center transform translate-x-[-50%] translate-y-[-50%] z-[2] w-[150px] h-[150px] overflow-hidden rounded-full mx-auto shadow-lg order-2 border-slate-200 cursor-pointer hover:brightness-[90%] active:scale-[0.99]'>
-                    <img src={`https://huda.descode.id/uploads/${formik.values.consumer_image_old}`} alt="fotoProfile" className='object-contain w-[96%] rounded-full' />
+                    <img src={`https://huda.descode.id/uploads/${formik.values.consumer_image_old}`} alt="fotoProfile" className='object-contain w-[96%] h-full rounded-full' />
                 </div>
             </div>
 
-            <div className='relative w-[60%] ml-[20px] h-max px-[20px] pb-[60px] rounded-lg overflow-hidden'>
-                <div onClick={handleLogout} className='absolute right-5 rounded-full cursor-pointer hover:brightness-[90%] flex bg-red-500 text-white items-center justify-center z-[2] active:scale-[0.99] shadow-md w-max h-[40px] flex px-5 items-center hover:brightness-[90%]'>
+            <div className='relative w-full md:w-[60%] md:ml-[20px] h-max md:px-[20px] md:pb-[60px] rounded-lg overflow-hidden'>
+                <div onClick={handleLogout} className='absolute md:right-5 rounded-full cursor-pointer hover:brightness-[90%] flex bg-red-500 text-white items-center justify-center z-[2] active:scale-[0.99] shadow-md w-max h-[40px] flex px-5 items-center hover:brightness-[90%]'>
                     <FaSignOutAlt size={14} />
                     <p className='ml-3'>Sign-out</p>
                 </div>
 
-                <h2 className='relative font-bold text-[26px]'>Rahman aditya darussalam</h2>
-                <h2 className='relative font-bold text-[20px]'>(ID: 2637DSG)</h2>
+                <h2 className='relative mt-[60px] md:mt-0 font-bold text-[26px]'>{userAuth?.consumer_name}</h2>
+                <h2 className='relative font-bold text-[20px]'>(ID: {userAuth?.consumer_id})</h2>
                 
                 <div className='w-full h-[1px] bg-slate-500 my-5'></div>
-                <div className='w-full flex h-max'>
-                   <form onSubmit={formik.handleSubmit} className='flex'>
-                        <div className='w-1/2 min-h-[355px] pr-5 flex flex-col justify-start'>
+                <div className='w-full md:flex h-max'>
+                   <form onSubmit={formik.handleSubmit} className='md:flex'>
+                        <div className='w-full md:w-1/2 h-max md:min-h-[355px] pr-5 flex flex-col justify-start'>
                             <div className="mb-5">
                                 <InputField 
                                     value={formik.values.consumer_name} 
@@ -139,7 +139,7 @@ const ProfileUser = () => {
                                 <InputField 
                                     value={formik.values.gender} 
                                     name='gender' 
-                                    typeInput='select-input'
+                                    typeInput='select-winput'
                                     disabled={!updateStatus}
                                     options={listGender}
                                     label='Gender'
@@ -166,7 +166,7 @@ const ProfileUser = () => {
                                 />
                             </div>
                         </div>
-                        <div className='w-1/2 min-h-[355px] pr-5 flex flex-col justify-start'>
+                        <div className='w-full md:w-1/2 h-max md:min-h-[355px] pr-5 flex flex-col justify-start'>
                             <div className="mb-5">
                                 <InputField 
                                     value={formik.values.post_code} 

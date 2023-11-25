@@ -14,7 +14,7 @@ const Alert = ({
     route
 }: {
     title?: string,
-    text?: string,
+    text?: any,
     icon?: "success" | "info" | "warning" | "error" | "question",
     showCancelButton?: boolean,
     cancelButtonText?: string,

@@ -18,5 +18,8 @@ export interface CartInterface {
     email_consumer?: string,
     image_shop?: string,
     __v?: string,
-    _id?: string
+    _id?: string,
+    idCart?: string,
+    quantityInCart?: number,
+    total_price?: number | null
 }

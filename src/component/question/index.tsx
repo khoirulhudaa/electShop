@@ -35,11 +35,11 @@ const Question = () => {
         <div className='w-full h-full'>
             <div className='w-[100%] z-[2] h-[400px] top-0 bg-gradient-to-r from-[#0000ff] to-[#0000ffd0]'>
             </div>
-            <div className='w-full h-full absolute z-[5] left-[40px] top-[40px]'>
+            <div className='w-full h-full hidden md:inline absolute z-[5] left-[40px] top-[40px]'>
                 <h2 className='text-[40px] text-white w-[40%] font-bold'>An easy way to send requests to all suppliers</h2>
                 <p className='text-[16px] mt-[20px] text-white w-[35%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
             </div>
-            <div className='w-[40%] right-[40px] h-[90%] top-5 bg-white rounded-lg p-[24px] flexflex-col justify-center items-center shadow-lg absolute z-[5]'>
+            <div className='w-[90%] ml-auto left-4 mr-auto md:ml-0 md:w-[40%] md:right-[40px] h-[90%] top-5 bg-white rounded-lg p-[24px] flexflex-col justify-center items-center shadow-lg absolute z-[5]'>
                 <form onSubmit={formik.handleSubmit} className='w-full'>
                   <div className="mb-5">
                     <InputField 

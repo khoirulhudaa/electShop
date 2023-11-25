@@ -1,11 +1,13 @@
 import ListProductAllBrand from "./listProductAllBrand";
-import ListProductCatalog from "./listProductCatalog";
-import ListProductElectronic from "./listProductElectronic";
+import ListProductShoes from "./listProductShoes";
+import ListProductEquipment from "./listProductEquipment";
 import ListRecommended from "./listRecommended";
+import ListHistory from "./listHistory";
 
 export {
     ListProductAllBrand,
-    ListProductCatalog,
-    ListProductElectronic,
-    ListRecommended
+    ListProductShoes,
+    ListProductEquipment,
+    ListRecommended,
+    ListHistory
 }

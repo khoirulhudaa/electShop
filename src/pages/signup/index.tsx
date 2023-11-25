@@ -1,10 +1,10 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Logo } from "../../assets"
 import { Button } from "../../component"
-import { useRegistrationFormik } from "../../utils/validations/validationRegister"
-import InputField from "../../component/inputField"
-import { useState } from "react"
 import ErrorMessage from "../../component/errorMessage"
+import InputField from "../../component/inputField"
+import { useRegistrationFormik } from "../../utils/validations/validationRegister"
 
 const Signup = () => {
   const [errorStatus, setErrorStatus] = useState<string>("")
@@ -22,11 +22,11 @@ const Signup = () => {
   const useFormikRegister = useRegistrationFormik({ onError: handleError })
 
   return (
-    <div className="w-screen bg-blue-100 h-screen flex items-center justify-center">
-      <div className="w-[50%] h-screen flex items-center justify-center">
+    <div className="w-screen bg-blue-100 h-max md:h-screen flex items-center justify-center">
+      <div className="w-[50%] h-screen hidden md:flex items-center justify-center">
         <img src={Logo} alt="logo" className="w-[70%]" />
       </div>
-      <div className="w-[50%] h-full rounded-lg flex flex-col justify-center overflow-hidden bg-white p-[40px]">
+      <div className="w-full md:w-[50%] h-full rounded-lg flex flex-col justify-center overflow-hidden bg-white p-[20px] md:p-[40px]">
       {
             errorStatus !== "" ? (
                 <>
@@ -36,8 +36,8 @@ const Signup = () => {
                 null
         }
         <h2 className="font-bold text-[32px] mb-4">Signup</h2>
-        <form onSubmit={useFormikRegister.handleSubmit} className="w-[100%] flex rounded-lg h-max">
-            <div className="w-[50%] pr-4">
+        <form onSubmit={useFormikRegister.handleSubmit} className="w-[100%] md:flex rounded-lg h-max">
+            <div className="w-full md:w-[50%] pr-0 md:pr-4">
               <div className="mb-5">
                 <InputField 
                     value={useFormikRegister.values.consumer_name} 
@@ -81,7 +81,7 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="w-[50%]">
+            <div className="w-full md:w-[50%]">
               <div className="mb-5">
                 <InputField 
                     value={useFormikRegister.values.password} 
@@ -112,7 +112,7 @@ const Signup = () => {
                 />
               </div>
               <div className='w-max flex flex-col mt-6'>
-                <Button status="primary" type="submit" text="Signup now" />
+                <Button status="primary" typeButton="submit" text="Signup now" />
                 <div className="flex mt-3 items-center font-normal text-[14px]">
                   Already have an account ? 
                   <Link to='/signin'>

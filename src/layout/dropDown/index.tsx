@@ -4,10 +4,11 @@ import { FaChevronRight } from "react-icons/fa"
 interface dropdownInterface {
     listMenu?: string[],
     title?: string,
-    onClick?: () => void
+    onClick?: (arg: string) => void,
+    active?: string
 }
 
-const DropDown = ({listMenu, title, onClick}: dropdownInterface) => {
+const DropDown = ({listMenu, title, onClick, active}: dropdownInterface) => {
 
   const [brandsActive, setBrandsActive] = useState(true)
   
@@ -22,7 +23,7 @@ const DropDown = ({listMenu, title, onClick}: dropdownInterface) => {
             <ul>
                 {
                     listMenu?.map((data, index) => (
-                        <li key={index} onClick={onClick} className='text-slate-500 my-[12px] text-[14px] hover:brightness-[50%] cursor-pointer'>{data}</li>
+                        <li key={index} onClick={() => onClick?.(data)} className={`text-${active === data ? 'blue-500 font-bold rounded-full' : 'slate-500'} flex items-center justify-between my-[12px] text-[14px] py-1 hover:brightness-[80%] cursor-pointer`}>{data} <input type="checkbox" name={data} checked={active === data} className="cursor-pointer" /></li>
                     ))
                 }
             </ul>

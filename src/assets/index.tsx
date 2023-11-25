@@ -25,6 +25,14 @@ import Success from './success.svg'
 import Pending from './pending.svg'
 import NotFounds from './404.svg'
 import Default from './default.png'
+import Cart from './cart.png'
+import Ball from './ball.jpg'
+import Shoes from './shoes.jpg'
+import BCA from './bca.png'
+import OVO from './ovo.png'
+import SHOPEEPAY from './shoopepay.png'
+import GOPAY from './gopay.png'
+import Search from './search.png'
 
 export {
 
@@ -55,6 +63,14 @@ export {
     Pending,
     NotFounds,
     Default,
+    Cart,
+    Ball,
+    Shoes,
+    BCA, 
+    OVO, 
+    SHOPEEPAY,
+    GOPAY,
+    Search,
 
     // JSON - LottieFiles
     MaintanenceJSON

@@ -38,8 +38,8 @@ const ListInDetailProduct = ({shop_id}: {shop_id: any}) => {
     <>
     {
       products && products.slice(0, 3).map((product, index) => (
-        <Link to={`/detail-product/${product && product?.product_id}`}>
-            <div key={index} className='w-[90%] border-b-2 border-slate-200 mx-auto min-h-[100px] max-h-[150px] items-center hover:brightness-[96%] cursor-pointer bg-white mb-4 px-2 flex overflow-hidden'>
+        <Link key={index} to={`/detail-product/${product && product?.product_id}`}>
+            <div className='w-[90%] border-b-2 border-slate-200 mx-auto min-h-[100px] max-h-[150px] items-center hover:brightness-[96%] cursor-pointer bg-white mb-4 px-2 flex overflow-hidden'>
                 <div className='w-[20%] h-[63px] flex items-center justify-center border border-slate-300 rounded-full relative overflow-hidden'>
                     <img src={`https://huda.descode.id/uploads/${product && product?.product_image}`} alt="fotoProduct" className='w-full h-auto' />
                 </div>

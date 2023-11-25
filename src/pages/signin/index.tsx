@@ -7,6 +7,7 @@ import ErrorMessage from "../../component/errorMessage"
 import InputField from "../../component/inputField"
 import { useLoginFormik } from "../../utils/validations/useValidationLogin"
 import { authSignOut, clearToken } from "../../redux/reducers/authSlice"
+import { clearCart } from "../../redux/reducers/cartSlice"
 
 const Signin = () => {
   const [errorStatus, setErrorStatus] = useState<string>("")
@@ -16,6 +17,7 @@ const Signin = () => {
   useEffect(() => {
     dispatch(authSignOut())
     dispatch(clearToken())
+    dispatch(clearCart())
   }, [])
 
   const handleError = (error: string) => {
@@ -25,11 +27,11 @@ const Signin = () => {
   const useFormikRegister = useLoginFormik({ onError: handleError })
 
   return (
-    <div className="w-screen bg-blue-100 h-screen flex items-center justify-center">
-      <div className="w-[50%] h-screen flex items-center justify-center">
+    <div className="w-screen bg-blue-100 h-screen md:flex items-center justify-center">
+      <div className="w-[50%] h-screen hidden md:flex items-center justify-center">
         <img src={Logo} alt="logo" className="w-[70%]" />
       </div>
-      <div className="w-[50%] h-full rounded-lg flex flex-col justify-center overflow-hidden bg-white p-[40px]">
+      <div className="w-full md:w-[50%] h-full rounded-lg flex flex-col justify-center overflow-hidden bg-white p-[20px] md:p-[40px]">
       {
             errorStatus !== "" ? (
                 <>
@@ -39,7 +41,7 @@ const Signin = () => {
                 null
         }
         <h2 className="font-bold text-[32px] mb-4">Signin</h2>
-        <form onSubmit={useFormikRegister.handleSubmit} className="w-[90%] flex flex-col rounded-lg h-max">
+        <form onSubmit={useFormikRegister.handleSubmit} className="w-full md:w-[90%] flex flex-col rounded-lg h-max">
             <div className="mb-5">
               <InputField 
                   value={useFormikRegister.values.email_consumer} 

@@ -11,7 +11,6 @@ const ProfileUser = lazy(() => import('../pages/profileUser'))
 const ShoppingHistory = lazy(() => import('../pages/shoppingHistory'))
 const ProfileShop = lazy(() => import('../pages/profileShop'))
 const SuccessPayment = lazy(() => import('../pages/successPayment'))
-const PendingPayment = lazy(() => import('../pages/pendingPayment'))
 const NotFound = lazy(() => import('../pages/notFound'))
 
 interface routerProps {
@@ -52,7 +51,7 @@ const Routers:routerProps[] = [
         component: MyChart
     },
     {
-        path: '/my-cart/checkout',
+        path: '/my-cart/:shop_id/checkout',
         exact: false,
         component: Checkout
     },
@@ -72,7 +71,7 @@ const Routers:routerProps[] = [
         component: ShoppingHistory
     },
     {
-        path: '/profileShop',
+        path: '/profileShop/:shop_id',
         exact: false,
         component: ProfileShop
     },
@@ -80,11 +79,6 @@ const Routers:routerProps[] = [
         path: '/successPayment',
         exact: false,
         component: SuccessPayment
-    },
-    {
-        path: '/pendingPayment',
-        exact: false,
-        component: PendingPayment
     },
     {
         path: '/404',

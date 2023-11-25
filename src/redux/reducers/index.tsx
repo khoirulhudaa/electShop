@@ -5,6 +5,7 @@ import commentSlice from "./commentSlice";
 import historySlice from "./historySlice";
 import shopSlice from "./shopSlice";
 import otherSlice from "./otherSlice";
+import productSlice from "./productSlice";
 
 const Reducers = combineReducers({
     authReducer: authSlice,
@@ -12,7 +13,8 @@ const Reducers = combineReducers({
     commentReducer: commentSlice,
     historyReducer: historySlice,
     shopReducer: shopSlice,
-    otherSlice: otherSlice
+    otherSlice: otherSlice,
+    productReducer: productSlice
 })
 
 export default Reducers

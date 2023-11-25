@@ -37,7 +37,6 @@ export const useUpdateProfile = ({onError, onResponse}: {onError?: any, onRespon
         .required('This field is required.')
         .oneOf(['Male', 'Female'], 'Invalid gender'),
         address: Yup.string()
-        .min(15, 'Must be at lest 15 characters')
         .notRequired(),
         post_code: Yup.string()
         .max(5, 'Maximum only 4 number')
