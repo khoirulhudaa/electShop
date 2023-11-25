@@ -3,7 +3,6 @@ import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import toRupiah from '../../helpers/toRupiah';
 import API from '../../service/api';
-import { productInterface } from '../../utils/interfaces/productInterface';
 
 const ListRecommended = () => {
   const [products, setProducts] = useState<any[]>([]);

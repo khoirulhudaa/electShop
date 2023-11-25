@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Ball, Shoes } from '../../assets';
+import { Shoes } from '../../assets';
 import { Button, Question } from '../../component';
 import Alert from '../../component/alert';
 import { ListProductAllBrand, ListProductEquipment, ListProductShoes, ListRecommended } from '../../component/listProduct';
