@@ -68,9 +68,9 @@ export const usePaymentFormik = ({onError}: {onError?: any}) => {
         console.log('response checkout:', response)
         
         if (response.data.status === 200) {
-            const invoiceUrl = response.data.data.invoiceUrl;
             resetForm()
             dispatch(clearCart())
+            const invoiceUrl = response.data.data.invoiceUrl;
             window.location.href = invoiceUrl;
         } else {
           onError(response.data.message)

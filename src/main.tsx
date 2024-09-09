@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     element={<router.component />}
                   />
                 ))
-              }@tailwind
+              }
             </Routes>
           </Suspense>
         </Router>

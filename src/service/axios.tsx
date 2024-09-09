@@ -26,7 +26,7 @@ api.interceptors.request.use(async function (config) {
   return config;
 
 }, function (error) {
-
+  console.log('error:', error)
   return Promise.reject(error);
 
 });
@@ -34,12 +34,12 @@ api.interceptors.request.use(async function (config) {
 // Tambahkan interceptor respons
 api.interceptors.response.use(function (response) {
   
-  console.log('response interceptors:', response)
+  console.log('response interceptors1:', response)
   return response
 
 }, function (error) {
 
-  console.log('error interceptors:', error)
+  console.log('error interceptors2:', error)
   if (error.response && error.response.status === 403) {
       console.log("error interceptors new:", error)
       window.location.pathname = '/signin'
