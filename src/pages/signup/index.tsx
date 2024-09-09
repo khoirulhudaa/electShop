@@ -22,11 +22,11 @@ const Signup = () => {
   const useFormikRegister = useRegistrationFormik({ onError: handleError })
 
   return (
-    <div className="w-screen bg-blue-100 h-max md:h-screen flex items-center justify-center">
+    <div className="w-screen bg-blue-100 h-screen overflow-hidden flex items-center justify-center">
       <div className="w-[50%] h-screen hidden md:flex items-center justify-center">
         <img src={Logo} alt="logo" className="w-[70%]" />
       </div>
-      <div className="w-full md:w-[50%] h-full rounded-lg flex flex-col justify-center overflow-hidden bg-white p-[20px] md:p-[40px]">
+      <div className="w-full md:w-[50%] h-full rounded-lg border-box p-10 flex flex-col overflow-y-auto bg-white">
       {
             errorStatus !== "" ? (
                 <>
@@ -35,16 +35,16 @@ const Signup = () => {
             ):
                 null
         }
-        <h2 className="font-bold text-[32px] mb-4">Signup</h2>
-        <form onSubmit={useFormikRegister.handleSubmit} className="w-[100%] md:flex rounded-lg h-max">
-            <div className="w-full md:w-[50%] pr-0 md:pr-4">
+        <h2 className="font-bold text-[26px] lg:text-[32px] mt-[0px] mb-4">Signup</h2>
+        <form onSubmit={useFormikRegister.handleSubmit} className="w-[100%] rounded-lg h-max">
+            <div className="w-full pr-0 md:pr-4">
               <div className="mb-5">
                 <InputField 
                     value={useFormikRegister.values.consumer_name} 
                     name='consumer_name' 
-                    label='seller name'
+                    label='Username'
                     type="text"
-                    id='sellerName'
+                    id='consumer_name'
                     onError={useFormikRegister.errors.consumer_name}
                     onTouched={!!useFormikRegister.touched.consumer_name}
                     onChange={useFormikRegister.handleChange} 
@@ -81,7 +81,7 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="w-full md:w-[50%]">
+            <div className="w-full">
               <div className="mb-5">
                 <InputField 
                     value={useFormikRegister.values.password} 

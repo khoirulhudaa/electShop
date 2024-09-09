@@ -1,0 +1,1 @@
+import{j as e}from"./index-c43d25d1.js";const s=({error:r})=>e.jsx("small",{className:"text-[white] w-max rounded-full px-4 py-1 text-[12px] font-normal bg-[red] mb-[12px]",children:r});export{s as E};

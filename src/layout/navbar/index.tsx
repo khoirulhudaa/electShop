@@ -56,7 +56,7 @@ const Navbar: React.FC<navbarProps> = ({type = 'default', active, onClick}) => {
             return  (
                 <>
                     {/* Sidebare in mobile device */}
-                    <div className={`fixed left-0 top-0 ${active ? 'left-[0%]' : 'left-[-100%]'} w-screen h-screen z-[9999999] shadow-lg overflow-hidden bg-blue-500 transition-all duration-300 p-5`}>
+                    <div className={`fixed left-0 top-0 ${active ? 'left-[0%] z-[9999999]' : 'left-[-110%] z-[-1]'} w-screen h-screen shadow-lg overflow-hidden bg-blue-500 transition-all duration-300 p-5`}>
                         <div className='rounded-full right-5 top-5 shadow-lg border border-white absolute bg-white flex items-center justify-center cursor-pointer text-[18px] w-[45px] h-[45px] p-1 hover:brightness-[90%] text-red-500 active:scale-[0.97]' onClick={onClick}>
                             <FaTimes />
                         </div>
